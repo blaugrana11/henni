@@ -1,0 +1,28 @@
+<h1>Télévisions de Mohamed Henni</h1>
+
+<h3>
+  Wishlist :
+</h3>
+<ul>
+  <% for(i of tasks) { %>
+    <li><%= i.brand %> :  <%= i.price %>€, <%= i.size %> pouces - <a href="/delete/<%= i.idtv %>">Delete</a> - <a href="/acheter/<%= i.idtv %>">Acheter</a></li>
+  <% } %>
+
+</ul>
+
+<h3>
+  Télévisions achetées :
+</h3>
+<ul> 
+
+  <% for(i of owned) { %>
+    <li><%= i.brand %> :  <%= i.price %>€, <%= i.size %> pouces - <a href="/delete/<%= i.idtv %>">Delete</a> - <a href="/casser/<%= i.idtv %>">Casser</a></li>
+  <% } %>
+
+</ul>
+<form action="/add" method="POST">
+  <input name="task" />
+  <input type="submit" />
+</form>
+
+<img src="/exo_henni/LW3L-orm/images/henni.jpg" alt="Mohamed Henni qui casse des télévisions">
